@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+<section class="section has-background-white has-text-dark">
+    <div class="container">
+        <div class="content">
+            <h2 class="has-text-dark">{{ .Title }}</h2>
+            <p>
+                {{ .Param "author" }}
+                |
+                <time datetime="{{ .Date }}">{{ lower (.Date.Format "02 Jan 2006") }}</time>
+                |
+                <span class="readTime">{{ .FuzzyWordCount }}</span> minuten
+            </p>
+            <p>
+                {{ .Content }}
+            </p>
+        </div>
+    </div>
+</section>
+{{ partial "footer.html" . }}

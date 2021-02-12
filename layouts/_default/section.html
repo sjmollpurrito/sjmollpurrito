@@ -1,0 +1,36 @@
+{{ partial "header.html" . }}
+<section class="section has-background-white has-text-dark">
+    {{ range sort .Pages }}
+    <div class="box">
+        <div class="columns">
+            {{ if .Params.image }}
+            <div class="column">
+                <a href="{{ .Permalink }}">
+                    <figure class="image ">
+                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                    </figure>
+                </a>
+            </div>
+            {{ end }}
+            <div class="column">
+                <a href="{{ .Permalink }}" class="has-text-white">
+                    <div class="content">
+                        <h2 class="has-text-white">{{ .Title }}</h2>
+                        <p>
+                            {{ .Param "author" }}
+                            |
+                            <time datetime="{{ .Date }}">{{ lower (.Date.Format "02 Jan 2006") }}</time>
+                            |
+                            <span class="readTime">{{ .FuzzyWordCount }}</span> minuten
+                        </p>
+                        <p>
+                            {{ .Summary }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</section>
+{{ partial "footer.html" . }}
