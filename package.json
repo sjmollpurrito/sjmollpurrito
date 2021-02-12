@@ -1,0 +1,11 @@
+{
+  "name": "emma-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sjmollpurrito/sjmollpurrito.git",
+  "author": "Arne Govaerts <arne.govaerts@student.hogent.be>",
+  "license": "MIT",
+  "dependencies": {
+    "bulma": "^0.9.2"
+  }
+}
